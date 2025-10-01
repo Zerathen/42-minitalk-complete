@@ -29,7 +29,7 @@ void	send_bit(int pid, int bit)
 	else
 		kill(pid, SIGUSR2);
 	while (!g_ack_received)
-		pause();
+		usleep(1);
 	g_ack_received = 0;
 }
 
